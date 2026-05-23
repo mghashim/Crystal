@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priser &amp; ATB — Crystal Tandvård</title>
+  <meta name="description" content="Transparenta priser för alla behandlingar på Crystal Tandvård. Information om Allmänt Tandvårdsbidrag (ATB) och delbetalning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .atb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gutter);
+    }
+    .atb-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(184,152,90,0.45);
+    }
+    .atb-card.featured {
+      background: var(--primary-container);
+      border-color: transparent;
+    }
+    .atb-card.featured .atb-amount { color: #fff; }
+    .atb-card.featured .atb-title { color: rgba(255,255,255,0.9); }
+    .atb-card.featured .atb-desc { color: rgba(255,255,255,0.65); }
+    .atb-amount {
+      font-family: var(--font-serif);
+      font-size: 40px; font-weight: 400; line-height: 1;
+      color: var(--primary);
+    }
+    .atb-title { font-size: 15px; font-weight: 600; color: var(--on-surface); }
+    .atb-desc { font-size: 14px; line-height: 22px; color: var(--on-surface-variant); }
+    .faq-item {
+      border-bottom: 0.5px solid rgba(184,152,90,0.3);
+      padding-block: 24px;
+    }
+    .faq-q {
+      font-family: var(--font-serif);
+      font-size: 18px; font-weight: 400; color: var(--on-surface);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .faq-q .icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,152,90,0.5);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s;
+      color: var(--primary);
+    }
+    .faq-item.open .faq-q .icon { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 15px; line-height: 24px; color: var(--on-surface-variant);
+      margin-top: 16px;
+      display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+    @media(max-width:768px){
+      .atb-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Crystal</a>
+      <ul class="nav-links">
+        <li><a href="estetisk-tandvard.html">Tjänster</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="priser.html" class="active">Priser</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="priser.html" class="btn-secondary">Se priser</a>
+        <a href="index.html#boka" class="btn-primary">Boka tid</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mobile-nav-link">Hem</a>
+    <a href="estetisk-tandvard.html" class="mobile-nav-link">Tjänster</a>
+    <a href="om-oss.html" class="mobile-nav-link">Om oss</a>
+    <a href="priser.html" class="mobile-nav-link">Priser</a>
+    <a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a>
+    <div class="mobile-nav-cta"><a href="index.html#boka" class="btn-primary">Boka tid</a></div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="max-width:var(--container-max);margin-inline:auto;padding-inline:var(--margin-desktop);display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow">Transparenta priser</span>
+      <h1 class="display-lg" style="font-size:52px;line-height:60px;max-width:640px">Priser &amp; Allmänt Tandvårdsbidrag</h1>
+      <p class="body-lg" style="max-width:560px">Vi tror på fullständig transparens. Inga dolda avgifter — bara tydliga priser och hjälp att maximera ditt statliga tandvårdsstöd.</p>
+    </div>
+  </div>
+
+  <!-- ATB SECTION -->
+  <section>
+    <div class="container">
+      <div class="section-header centered">
+        <span class="eyebrow">ATB — Allmänt Tandvårdsbidrag</span>
+        <h2 class="headline-lg">Ditt statliga stöd för tandvård</h2>
+        <p class="body-lg">Sedan 2008 ger staten alla vuxna ett tandvårdsbidrag som du kan använda hos oss. Vi hjälper dig utnyttja det fullt ut.</p>
+      </div>
+      <div class="atb-grid">
+        <div class="atb-card">
+          <div class="atb-amount">300 kr</div>
+          <div class="atb-title">Per år, 19–29 &amp; 65+ år</div>
+          <div class="atb-desc">Förhöjt ATB för yngre och äldre patienter som ett stöd för att etablera goda tandvårdsvanor.</div>
+        </div>
+        <div class="atb-card featured">
+          <div class="atb-amount" style="color:#fff">600 kr</div>
+          <div class="atb-title" style="color:rgba(255,255,255,0.9)">Per 2 år, 30–64 år</div>
+          <div class="atb-desc" style="color:rgba(255,255,255,0.65)">Standard ATB som betalas ut varannat år och kan samlas ihop för större behandlingar.</div>
+        </div>
+        <div class="atb-card">
+          <div class="atb-amount">600 kr</div>
+          <div class="atb-title">Extrabidraget</div>
+          <div class="atb-desc">Visste du att du kan spara ihop ditt ATB? Använd inte ditt bidrag ett år och du har 1 200 kr nästa år.</div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:32px">
+        <svg class="callout-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+        </svg>
+        <p class="body-md" style="color:var(--on-surface)"><strong>Vi hanterar allt åt dig.</strong> Vid varje besök registrerar vi ditt ATB automatiskt mot Försäkringskassan. Du behöver inte göra något — vi drar av bidraget direkt från din faktura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE LISTS -->
+  <section class="bg-tint">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Prislista</span>
+        <h2 class="headline-lg">Alla priser</h2>
+        <p class="body-lg">Priserna är inklusive moms. Vid fri undersökning ingår röntgen och behandlingsplan.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px">
+
+        <!-- Grundvård -->
+        <div class="price-category" id="grundvard">
+          <div class="price-category-header">
+            <span class="price-category-title">Grundläggande tandvård</span>
+            <span class="chip">ATB godkänt</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Undersökning</span>
+            <span class="price-item-desc">Inkl. röntgen och behandlingsplan</span>
+            <span class="price-item-price">1 200 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Professionell rengöring</span>
+            <span class="price-item-desc">Tandstensborttagning, polering, fluorid</span>
+            <span class="price-item-price">890 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Undersökning + Rengöring</span>
+            <span class="price-item-desc">Kombinationspaket</span>
+            <span class="price-item-price">1 850 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Lagning (komposit)</span>
+            <span class="price-item-desc">Per yta, vit fyllning</span>
+            <span class="price-item-price">Från 950 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Akutvård</span>
+            <span class="price-item-desc">Smärtbehandling, inkl. röntgen</span>
+            <span class="price-item-price">Från 1 400 kr</span>
+          </div>
+        </div>
+
+        <!-- Blekning -->
+        <div class="price-category" id="blekning">
+          <div class="price-category-header">
+            <span class="price-category-title">Tandblekning</span>
+            <span class="chip">Populärast</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Klinisk blekning (Zoom)</span>
+            <span class="price-item-desc">60–90 min, upp till 8 nyanser ljusare</span>
+            <span class="price-item-price">3 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Klinisk blekning + Hemblek</span>
+            <span class="price-item-desc">Klinisk behandling + underhållssats</span>
+            <span class="price-item-price">4 200 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Hemblekning (skenor)</span>
+            <span class="price-item-desc">Skräddarsydda skenor + blekgel</span>
+            <span class="price-item-price">2 200 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Påfyllning blekgel</span>
+            <span class="price-item-desc">4-pack</span>
+            <span class="price-item-price">490 kr</span>
+          </div>
+        </div>
+
+        <!-- Fasader -->
+        <div class="price-category" id="fasader">
+          <div class="price-category-header">
+            <span class="price-category-title">Porslinsfasader &amp; Kronor</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Porslinsfasad (E.max)</span>
+            <span class="price-item-desc">Per tand, inkl. laboratoriekostnad</span>
+            <span class="price-item-price">Från 8 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Kompositfasad</span>
+            <span class="price-item-desc">Per tand, direktskulpterad</span>
+            <span class="price-item-price">Från 3 800 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Helkeramisk krona</span>
+            <span class="price-item-desc">Per tand, zirkoniumoxid</span>
+            <span class="price-item-price">Från 7 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Smile design-paket (8 tänder)</span>
+            <span class="price-item-desc">Överkäk, inkl. konsultation och provisorium</span>
+            <span class="price-item-price">Från 62 000 kr</span>
+          </div>
+        </div>
+
+        <!-- Invisalign -->
+        <div class="price-category" id="invisalign">
+          <div class="price-category-header">
+            <span class="price-category-title">Invisalign &amp; Tandreglering</span>
+            <span class="chip">Delbetalning</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Invisalign Lite</span>
+            <span class="price-item-desc">Upp till 14 steg, enklare fall</span>
+            <span class="price-item-price">24 900 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Invisalign Comprehensive</span>
+            <span class="price-item-desc">Obegränsat antal steg, komplexa fall</span>
+            <span class="price-item-price">38 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Retainer (stabil)</span>
+            <span class="price-item-desc">Per käke, efter avslutad behandling</span>
+            <span class="price-item-price">1 800 kr</span>
+          </div>
+        </div>
+
+        <!-- Implantat -->
+        <div class="price-category" id="implantat">
+          <div class="price-category-header">
+            <span class="price-category-title">Tandimplantat</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Implantat (Straumann)</span>
+            <span class="price-item-desc">Titanskruv + kirurgi</span>
+            <span class="price-item-price">Från 12 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Implantat + Krona</span>
+            <span class="price-item-desc">Komplett lösning inkl. keramisk krona</span>
+            <span class="price-item-price">Från 18 000 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Benkransattachment</span>
+            <span class="price-item-desc">Vid behov av benuppbyggnad</span>
+            <span class="price-item-price">Från 5 500 kr</span>
+          </div>
+        </div>
+
+        <!-- Övrigt -->
+        <div class="price-category">
+          <div class="price-category-header">
+            <span class="price-category-title">Skydd &amp; Övrigt</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Bettskena (bruxism)</span>
+            <span class="price-item-desc">Hård, laboratorietillverkad</span>
+            <span class="price-item-price">2 800 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Sportskydd</span>
+            <span class="price-item-desc">Skräddarsytt, valfri färg</span>
+            <span class="price-item-price">1 900 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Digital smile design</span>
+            <span class="price-item-desc">Visualisering inför behandling</span>
+            <span class="price-item-price">1 500 kr</span>
+          </div>
+          <div class="price-row">
+            <span class="price-item-name">Kostnadsfri konsultation</span>
+            <span class="price-item-desc">Rådgivning utan bindande åtagande</span>
+            <span class="price-item-price">0 kr</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:24px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;color:var(--on-surface-variant)">
+        * Slutpriset kan variera beroende på individens munhälsa och behandlingens komplexitet. Exakt pris anges alltid i behandlingsplan innan påbörjad behandling.
+      </p>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section>
+    <div class="container">
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="eyebrow">Betalning</span>
+          <h2 class="headline-lg">Flexibla betalningsalternativ</h2>
+          <p class="body-lg">Vi vill att ekonomin aldrig ska stå i vägen för din tandhälsa. Därför erbjuder vi flera betalningsalternativ.</p>
+          <ul class="crystal-list">
+            <li>Swish, kort och faktura accepteras</li>
+            <li>Delbetalning via Klarna utan ränta (0–6 mån)</li>
+            <li>Privat tandvårdsförsäkring — vi samarbetar med de flesta bolag</li>
+            <li>ATB dras automatiskt av från din faktura</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn-secondary" style="width:fit-content">Kontakta oss för offert</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="callout">
+            <svg class="callout-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--on-surface);margin-bottom:4px">Delbetalning med Klarna</div>
+              <p class="body-md">Dela upp behandlingar över 3 000 kr på 3, 6 eller 12 månader. Ansökan tar 2 minuter.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <svg class="callout-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:var(--on-surface);margin-bottom:4px">Tandvårdsförsäkring</div>
+              <p class="body-md">Vi samarbetar med Folksam, If, Trygg-Hansa, Skandia och Eurowings. Ange ditt försäkringsbolag vid bokning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-tint">
+    <div class="container" style="max-width:860px">
+      <div class="section-header">
+        <span class="eyebrow">Vanliga frågor</span>
+        <h2 class="headline-lg">Frågor om priser &amp; ATB</h2>
+      </div>
+      <div id="faqList">
+        <div class="faq-item">
+          <div class="faq-q">
+            Kan jag använda mitt ATB på estetiska behandlingar?
+            <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="faq-a">ATB kan användas på de flesta tandvårdsbehandlingar, inklusive undersökning, rengöring och lagningar. För rent kosmetiska behandlingar som tandblekning och fasader gäller inte ATB, men vi informerar alltid tydligt om vad som täcks vid din konsultation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Hur vet jag hur mycket ATB jag har kvar?
+            <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="faq-a">Du kan enkelt kontrollera ditt ATB-saldo på Försäkringskassans webbplats eller i deras app. Vi kan också hjälpa dig att kontrollera ditt saldo vid besöket — det tar bara en minut.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Erbjuder ni räntefri delbetalning?
+            <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="faq-a">Ja! Via Klarna erbjuder vi räntefri delbetalning på 3 eller 6 månader för behandlingar över 3 000 kr. För längre planer (upp till 24 mån) gäller Klarnas normala ränta. Ansökan sker i kassan och tar 2 minuter.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Vad ingår i den kostnadsfria konsultationen?
+            <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="faq-a">Din kostnadsfria konsultation (30 min) inkluderar en genomgång av dina önskemål, en visuell undersökning av din munhälsa, en preliminär behandlingsplan och en prisuppskattning. Ingen röntgen ingår, men det kan vi boka separat vid behov.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Hur fungerar era priser för Invisalign?
+            <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </div>
+          <div class="faq-a">Invisalign-priset är ett fast paketpris som inkluderar alla skenor, alla kontrollbesök under behandlingstiden och en retainer efter avslutad behandling. Inga dolda kostnader tillkommer. Exakt pris beror på fallets komplexitet och fastställs efter din konsultation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <span class="eyebrow">Ingen bindning</span>
+        <h2 class="headline-lg">Boka din kostnadsfria konsultation</h2>
+        <p class="body-lg">Få en skräddarsydd behandlingsplan och ett exakt pris — utan kostnad och utan åtagande.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="index.html#boka" class="btn-primary">Boka gratis konsultation</a>
+        <a href="estetisk-tandvard.html" class="btn-ghost">Utforska behandlingar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="footer-logo">Crystal</a>
+        <p class="footer-tagline">Göteborgs premiummottagning för estetisk och preventiv tandvård.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Tjänster</span>
+        <ul class="footer-links">
+          <li><a href="estetisk-tandvard.html#blekning">Tandblekning</a></li>
+          <li><a href="estetisk-tandvard.html#fasader">Porslinsfasader</a></li>
+          <li><a href="estetisk-tandvard.html#invisalign">Invisalign</a></li>
+          <li><a href="estetisk-tandvard.html#implantat">Implantat</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Kliniken</span>
+        <ul class="footer-links">
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="priser.html">Priser &amp; ATB</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="#">Integritetspolicy</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Besök oss</span>
+        <ul class="footer-links">
+          <li><a href="#">Avenyn 12</a></li>
+          <li><a href="#">411 36 Göteborg</a></li>
+          <li><a href="tel:+4631123456">031 — 123 45 67</a></li>
+          <li><a href="mailto:hej@crystaltand.se">hej@crystaltand.se</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Crystal Tandvård AB</span>
+      <span class="footer-copy">Göteborg, Sverige</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

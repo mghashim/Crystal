@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om oss — Crystal Tandvård</title>
+  <meta name="description" content="Lär känna teamet bakom Crystal Tandvård — Göteborgs ledande klinik för estetisk tandvård. Vår filosofi, historia och specialister.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gutter);
+    }
+    .value-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(184,152,90,0.4);
+    }
+    .value-num {
+      font-family: var(--font-mono);
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      color: var(--gold); text-transform: uppercase;
+    }
+    .value-title {
+      font-family: var(--font-serif);
+      font-size: 22px; font-weight: 400; color: var(--on-surface);
+    }
+    .clinic-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 0.5px solid rgba(184,152,90,0.4);
+    }
+    .clinic-img img {
+      width: 100%; height: 420px; object-fit: cover; display: block;
+    }
+    @media(max-width:768px){
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Crystal</a>
+      <ul class="nav-links">
+        <li><a href="estetisk-tandvard.html">Tjänster</a></li>
+        <li><a href="om-oss.html" class="active">Om oss</a></li>
+        <li><a href="priser.html">Priser</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="priser.html" class="btn-secondary">Se priser</a>
+        <a href="index.html#boka" class="btn-primary">Boka tid</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mobile-nav-link">Hem</a>
+    <a href="estetisk-tandvard.html" class="mobile-nav-link">Tjänster</a>
+    <a href="om-oss.html" class="mobile-nav-link">Om oss</a>
+    <a href="priser.html" class="mobile-nav-link">Priser</a>
+    <a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a>
+    <div class="mobile-nav-cta"><a href="index.html#boka" class="btn-primary">Boka tid</a></div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="max-width:var(--container-max);margin-inline:auto;padding-inline:var(--margin-desktop);display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow">Vår historia</span>
+      <h1 class="display-lg" style="font-size:52px;line-height:60px;max-width:640px">Grundad i övertygelsen att tandvård ska vara en upplevelse</h1>
+      <p class="body-lg" style="max-width:560px">Sedan 2009 har Crystal Tandvård satt standarden för estetisk tandvård i Göteborg — med ett team som aldrig slutar lära sig och en miljö som aldrig slutar inspirera.</p>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section>
+    <div class="container">
+      <div class="two-col gap-xl">
+        <div class="clinic-img">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&auto=format" alt="Crystal Tandvård klinik interiör">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="eyebrow">Vår berättelse</span>
+          <h2 class="headline-lg">Mer än en tandläkarmottagning</h2>
+          <p class="body-lg">Crystal grundades 2009 av Dr. Elena Svensson med en enkel vision: att skapa en plats där precision och omtanke förenas. En plats där patienten aldrig ska behöva välja mellan klinisk excellens och en värdig upplevelse.</p>
+          <p class="body-md">Idag är vi ett team på åtta specialister som tillsammans täcker hela spektret av modern tandvård. Vi investerar kontinuerligt i ny teknik, utbildning och klinikens miljö — för att du alltid ska mötas av det bästa.</p>
+          <p class="body-md">Namnet Crystal är inte en slump. Det speglar vår övertygelse om klarhet — i kommunikation, i diagnos och i de resultat vi levererar. Som en kristall bryter vi det komplicerade i tandvård till något transparent och begripligt.</p>
+          <div style="display:flex;gap:32px;margin-top:8px">
+            <div>
+              <div style="font-family:var(--font-serif);font-size:36px;font-weight:400;color:var(--primary)">2009</div>
+              <div class="eyebrow">Grundad</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-serif);font-size:36px;font-weight:400;color:var(--primary)">8</div>
+              <div class="eyebrow">Specialister</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-serif);font-size:36px;font-weight:400;color:var(--primary)">4 800+</div>
+              <div class="eyebrow">Patienter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="bg-tint">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Vad vi tror på</span>
+        <h2 class="headline-lg">Våra grundvärderingar</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-num">01 &mdash; Precision</div>
+          <div class="value-title">Klinisk excellens utan kompromiss</div>
+          <p class="body-md">Varje behandling utförs med de bästa material, den senaste tekniken och den noggrannhet vi skulle vilja ha för oss själva och vår familj.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-num">02 &mdash; Transparens</div>
+          <div class="value-title">Inga dolda agendor</div>
+          <p class="body-md">Vi rekommenderar bara det du behöver. Du får alltid en skriftlig behandlingsplan med exakta priser innan vi påbörjar något — och ett ärligt svar på varje fråga.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-num">03 &mdash; Omtanke</div>
+          <div class="value-title">Patienten i centrum</div>
+          <p class="body-md">Vi vet att tandläkarrädsla är verklig. Vår miljö, vårt bemötande och vårt tempo är alla utformade för att du ska känna dig trygg och respekterad.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-num">04 &mdash; Estetik</div>
+          <div class="value-title">Funktion och skönhet i balans</div>
+          <p class="body-md">Ett vackert leende som inte fungerar är inte ett bra leende. Vi designar resultat som ser naturliga ut, biter rätt och håller länge.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-num">05 &mdash; Lärande</div>
+          <div class="value-title">Alltid i framkant</div>
+          <p class="body-md">Alla i teamet genomgår kontinuerlig fortbildning. Vi deltar i internationella kongresser och investerar i ny utrustning varje år.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-num">06 &mdash; Hållbarhet</div>
+          <div class="value-title">Ansvar för miljön</div>
+          <p class="body-md">Vi arbetar aktivt för att minska vår miljöpåverkan — från digitala avtryck som eliminerar plastmaterial till klimatneutral energi i kliniken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Teamet</span>
+        <h2 class="headline-lg">Möt våra specialister</h2>
+        <p class="body-lg" style="max-width:480px">Åtta engagerade tandläkare och tandhygienister med ett gemensamt mål: ditt bästa leende.</p>
+      </div>
+      <div class="team-grid">
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80&auto=format" alt="Dr. Elena Svensson">
+          </div>
+          <div class="team-name">Dr. Elena Svensson</div>
+          <div class="team-role">Grundare &amp; Estetisk tandläkare</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Specialist i estetisk tandvård med 20 år erfarenhet. Utbildad i Stockholm, London och New York.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80&auto=format" alt="Dr. Johan Berg">
+          </div>
+          <div class="team-name">Dr. Johan Berg</div>
+          <div class="team-role">Oral kirurg &amp; Implantolog</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Specialist i orala implantat och kirurgiska ingrepp. Har genomfört över 2 000 implantatoperationer.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80&auto=format" alt="Dr. Mia Lindqvist">
+          </div>
+          <div class="team-name">Dr. Mia Lindqvist</div>
+          <div class="team-role">Ortodontist &amp; Invisalign Diamond</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Invisalign Diamond-provider med mer än 500 avslutade fall. Specialist i vuxenorthodonti.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80&auto=format" alt="Maja Ek">
+          </div>
+          <div class="team-name">Maja Ek</div>
+          <div class="team-role">Leg. Tandhygienist</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Specialist i preventiv tandvård och parodontologi. Certifierad i Air-Flow och professionell blekning.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&q=80&auto=format" alt="Dr. Kasper Nilsson">
+          </div>
+          <div class="team-name">Dr. Kasper Nilsson</div>
+          <div class="team-role">Allmäntandläkare</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Specialiserat sig på barntandvård och patienter med tandläkarrädsla. Känd för sitt lugna och pedagogiska sätt.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&q=80&auto=format" alt="Sara Holmberg">
+          </div>
+          <div class="team-name">Sara Holmberg</div>
+          <div class="team-role">Leg. Tandhygienist</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Expert på parodontologi och tandköttsvård. Håller regelbundna patientutbildningar i hemvård.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80&auto=format" alt="Dr. Lena Park">
+          </div>
+          <div class="team-name">Dr. Lena Park</div>
+          <div class="team-role">Protetiker</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Specialist i komplex protetik och smile design. Samarbetar med Skandinaviens ledande tandlaboratorier.</p>
+        </div>
+
+        <div>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=400&q=80&auto=format" alt="Anders Thorsen">
+          </div>
+          <div class="team-name">Anders Thorsen</div>
+          <div class="team-role">Patientkoordinator</div>
+          <p class="body-md" style="margin-top:10px;font-size:14px">Din kontakt för bokning, behandlingsplaner och ekonomifrågor. Anders ser till att ditt besök är smärtfritt från start till slut.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINIC -->
+  <section class="bg-tint">
+    <div class="container">
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span class="eyebrow">Kliniken</span>
+          <h2 class="headline-lg">En miljö designad för välmående</h2>
+          <p class="body-lg">Vår klinik på Avenyn är utformad för att bryta med allt du förväntar dig av en tandläkarmottagning.</p>
+          <ul class="crystal-list">
+            <li>Naturligt ljus och organiska material genom hela lokalen</li>
+            <li>Privata behandlingsrum med bullerdämpande design</li>
+            <li>Senaste digitala teknik — ingen traditionell gipsavgjutning</li>
+            <li>Intraoral scanning och CBCT-röntgen på kliniken</li>
+            <li>Cerec CAD/CAM för kronutformning samma dag</li>
+            <li>Tillgänglig med kollektivtrafik — 3 min från Avenyn</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn-secondary" style="width:fit-content">Boka ett besök</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="clinic-img">
+            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&q=80&auto=format" alt="Crystal Tandvård interiör">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="clinic-img" style="border-radius:var(--radius-lg);overflow:hidden">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80&auto=format" alt="Behandlingsrum" style="width:100%;height:180px;object-fit:cover;display:block">
+            </div>
+            <div class="clinic-img" style="border-radius:var(--radius-lg);overflow:hidden">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=400&q=80&auto=format" alt="Reception" style="width:100%;height:180px;object-fit:cover;display:block">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <span class="eyebrow">Välkommen</span>
+        <h2 class="headline-lg">Redo att träffa oss?</h2>
+        <p class="body-lg">Boka din kostnadsfria konsultation och ta första steget mot ditt nya leende.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="index.html#boka" class="btn-primary">Boka tid nu</a>
+        <a href="priser.html" class="btn-ghost">Se priser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="footer-logo">Crystal</a>
+        <p class="footer-tagline">Göteborgs premiummottagning för estetisk och preventiv tandvård.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Tjänster</span>
+        <ul class="footer-links">
+          <li><a href="estetisk-tandvard.html#blekning">Tandblekning</a></li>
+          <li><a href="estetisk-tandvard.html#fasader">Porslinsfasader</a></li>
+          <li><a href="estetisk-tandvard.html#invisalign">Invisalign</a></li>
+          <li><a href="estetisk-tandvard.html#implantat">Implantat</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Kliniken</span>
+        <ul class="footer-links">
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="priser.html">Priser &amp; ATB</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="#">Integritetspolicy</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Besök oss</span>
+        <ul class="footer-links">
+          <li><a href="#">Avenyn 12</a></li>
+          <li><a href="#">411 36 Göteborg</a></li>
+          <li><a href="tel:+4631123456">031 — 123 45 67</a></li>
+          <li><a href="mailto:hej@crystaltand.se">hej@crystaltand.se</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Crystal Tandvård AB</span>
+      <span class="footer-copy">Göteborg, Sverige</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

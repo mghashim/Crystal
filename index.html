@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hem — Crystal Tandvård</title>
+  <meta name="description" content="Crystal Tandvård — Göteborgs premiummottagning för estetisk och preventiv tandvård. Boka konsultation online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Page-specific overrides */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: calc(12.5% + 8px);
+      right: calc(12.5% + 8px);
+      height: 0.5px;
+      background: rgba(184,152,90,0.5);
+    }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding-inline: 16px; }
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,152,90,0.6);
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+      color: var(--primary);
+      position: relative; z-index: 1;
+    }
+    .step-title { font-family: var(--font-serif); font-size: 16px; font-weight: 400; color: var(--on-surface); }
+    .step-desc { font-size: 13px; line-height: 20px; color: var(--on-surface-variant); }
+    @media(max-width:768px){
+      .process-steps { grid-template-columns: repeat(2,1fr); gap: 32px; }
+      .process-steps::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Crystal</a>
+      <ul class="nav-links">
+        <li><a href="estetisk-tandvard.html">Tjänster</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="priser.html">Priser</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="priser.html" class="btn-secondary">Se priser</a>
+        <a href="#boka" class="btn-primary">Boka tid</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mobile-nav-link">Hem</a>
+    <a href="estetisk-tandvard.html" class="mobile-nav-link">Tjänster</a>
+    <a href="om-oss.html" class="mobile-nav-link">Om oss</a>
+    <a href="priser.html" class="mobile-nav-link">Priser</a>
+    <a href="#kontakt" class="mobile-nav-link">Kontakt</a>
+    <div class="mobile-nav-cta">
+      <a href="#boka" class="btn-primary">Boka tid</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Göteborg &middot; Estetisk tandvård</span>
+        <h1 class="display-lg">Precision&shy; möter estetik</h1>
+        <p class="body-lg">Crystal Tandvård kombinerar avancerad klinisk kompetens med en helhetssyn på estetik. Vi skapar leenden som förändrar.</p>
+        <div class="hero-actions">
+          <a href="#boka" class="btn-primary">Boka konsultation</a>
+          <a href="estetisk-tandvard.html" class="btn-link">Utforska tjänster <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=960&q=85&auto=format"
+          alt="Crystal Tandvård — ljus och stilren mottagning"
+          loading="eager"
+        >
+        <div class="hero-badge">
+          <div class="hero-badge-num">15+</div>
+          <div class="hero-badge-lbl">Års erfarenhet</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">4 800+</div>
+        <div class="stat-lbl">Nöjda patienter</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98&thinsp;%</div>
+        <div class="stat-lbl">Rekommenderar oss</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <div class="stat-lbl">Års erfarenhet</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5.0 ★</div>
+        <div class="stat-lbl">Google-betyg</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Våra tjänster</span>
+        <h2 class="headline-lg">Komplett estetisk tandvård</h2>
+        <p class="body-lg" style="max-width:540px">Från preventiv vård till avancerade estetiska behandlingar — allt under ett tak, utfört av experter.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+              <h3>Tandblekning</h3>
+              <span class="chip">Populärt</span>
+            </div>
+            <p class="body-md">Professionell blekning med klinisk precision. Upp till 8 nyanser ljusare på en enda behandling.</p>
+          </div>
+          <a href="estetisk-tandvard.html#blekning" class="btn-link">Läs mer →</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:10px">Porslinsfasader</h3>
+            <p class="body-md">Ultratunna keramikfasader som ger ett naturligt och hållbart resultat med minimal preparering.</p>
+          </div>
+          <a href="estetisk-tandvard.html#fasader" class="btn-link">Läs mer →</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:10px">Invisalign</h3>
+            <p class="body-md">Osynlig och bekväm tandreglering för vuxna. Bär skenorna på dina egna villkor.</p>
+          </div>
+          <a href="estetisk-tandvard.html#invisalign" class="btn-link">Läs mer →</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:10px">Tandimplantat</h3>
+            <p class="body-md">Permanenta implantat i titanium som ser ut och känns som dina egna tänder. Livslång lösning.</p>
+          </div>
+          <a href="estetisk-tandvard.html#implantat" class="btn-link">Läs mer →</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:10px">Förebyggande vård</h3>
+            <p class="body-md">Regelbundna undersökningar, professionell rengöring och skräddarsydda hemvårdsplaner.</p>
+          </div>
+          <a href="estetisk-tandvard.html#preventiv" class="btn-link">Läs mer →</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+              <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <div>
+            <h3 style="margin-bottom:10px">Bettskena &amp; Skydd</h3>
+            <p class="body-md">Skräddarsydda bettskenor mot bruxism och sportskydd tillverkade i premiumkvalitet.</p>
+          </div>
+          <a href="estetisk-tandvard.html#skydd" class="btn-link">Läs mer →</a>
+        </div>
+
+      </div>
+      <div style="margin-top:48px">
+        <a href="estetisk-tandvard.html" class="btn-secondary">Alla behandlingar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER -->
+  <section class="bg-tint">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="eyebrow">Resultat</span>
+        <h2 class="headline-lg">Transformationer vi är stolta över</h2>
+        <p class="body-lg">Dra i reglaget för att se skillnaden före och efter behandling.</p>
+      </div>
+
+      <div class="ba-wrap" id="baSlider">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=860&q=80&auto=format" alt="Före behandling">
+        <div class="ba-clip" id="baClip">
+          <img src="https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=860&q=80&auto=format" alt="Efter behandling">
+        </div>
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-line"></div>
+          <div class="ba-knob">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M5 8h6M8 5l3 3-3 3" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="ba-line"></div>
+        </div>
+        <div class="ba-labels">
+          <span class="ba-lbl">Före</span>
+          <span class="ba-lbl">Efter</span>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px">
+        <a href="estetisk-tandvard.html" class="btn-secondary">Se alla behandlingar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="container">
+      <div class="section-header centered">
+        <span class="eyebrow">Hur det fungerar</span>
+        <h2 class="headline-lg">Din resa mot ett nytt leende</h2>
+        <p class="body-lg">Fyra enkla steg från din första kontakt till det färdiga resultatet.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-title">Kostnadsfri konsultation</div>
+          <div class="step-desc">Vi lyssnar på dina önskemål och utvärderar din munhälsa utan kostnad.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-title">Behandlingsplan</div>
+          <div class="step-desc">Du får en skräddarsydd plan med tydliga priser och tidsramar.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-title">Behandling</div>
+          <div class="step-desc">Genomförs med senaste tekniken av våra specialistutbildade tandläkare.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-title">Eftervård</div>
+          <div class="step-desc">Vi följer upp ditt resultat och ger dig en personlig hemvårdsplan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-container">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="eyebrow">Patientröster</span>
+        <h2 class="headline-lg">Vad våra patienter säger</h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="card testimonial-card">
+          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+          <p class="testimonial-quote">"Jag hade aldrig trott att ett tandläkarbesök skulle kännas som ett spa. Crystal har förändrat min syn på tandvård helt och hållet."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Anna K.</div>
+            <div class="testimonial-date">Mars 2026 · Porslinsfasader</div>
+          </div>
+        </div>
+
+        <div class="card testimonial-card">
+          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+          <p class="testimonial-quote">"Resultatet av min Invisalign-behandling översteg alla förväntningar. Professionellt, diskret och effektivt på alla plan."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Marcus L.</div>
+            <div class="testimonial-date">Februari 2026 · Invisalign</div>
+          </div>
+        </div>
+
+        <div class="card testimonial-card">
+          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+          <p class="testimonial-quote">"Tandblekningen gav fantastiska resultat redan vid första besöket. Kunnig och omtänksam personal i en underbar miljö."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-name">Sofia B.</div>
+            <div class="testimonial-date">Januari 2026 · Tandblekning</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" id="boka">
+    <div class="cta-band-inner">
+      <div>
+        <span class="eyebrow">Redo att börja?</span>
+        <h2 class="headline-lg">Boka din kostnadsfria konsultation</h2>
+        <p class="body-lg">Möt en av våra specialister och ta reda på vilken behandling som passar dig bäst.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="#kontakt" class="btn-primary">Boka tid nu</a>
+        <a href="priser.html" class="btn-ghost">Se priser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="two-col">
+        <div style="display:flex;flex-direction:column;gap:28px">
+          <div>
+            <span class="eyebrow">Kontakt</span>
+            <h2 class="headline-lg" style="margin-top:12px">Hör av dig till oss</h2>
+            <p class="body-lg" style="margin-top:16px">Vi svarar inom 24 timmar på vardagar. Välkommen att ringa, maila eller fylla i formuläret.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;gap:14px">
+              <span class="chip">Adress</span>
+              <span style="font-size:15px;color:var(--on-surface)">Avenyn 12, 411 36 Göteborg</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <span class="chip">Telefon</span>
+              <a href="tel:+4631123456" style="font-size:15px;color:var(--on-surface)">031 — 123 45 67</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <span class="chip">E-post</span>
+              <a href="mailto:hej@crystaltand.se" style="font-size:15px;color:var(--on-surface)">hej@crystaltand.se</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <span class="chip">Öppet</span>
+              <span style="font-size:15px;color:var(--on-surface)">Mån – Fre &nbsp;08:00 – 18:00</span>
+            </div>
+          </div>
+        </div>
+        <form style="display:flex;flex-direction:column;gap:28px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+            <div class="form-group">
+              <label class="form-label">Förnamn</label>
+              <input type="text" class="form-input" placeholder="Anna">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Efternamn</label>
+              <input type="text" class="form-input" placeholder="Karlsson">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-postadress</label>
+            <input type="email" class="form-input" placeholder="anna@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefon</label>
+            <input type="tel" class="form-input" placeholder="070 000 00 00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meddelande</label>
+            <textarea class="form-textarea" placeholder="Berätta vad du är intresserad av…" rows="3"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn-primary">Skicka förfrågan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="footer-logo">Crystal</a>
+        <p class="footer-tagline">Göteborgs premiummottagning för estetisk och preventiv tandvård. Precision möter estetik.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Tjänster</span>
+        <ul class="footer-links">
+          <li><a href="estetisk-tandvard.html#blekning">Tandblekning</a></li>
+          <li><a href="estetisk-tandvard.html#fasader">Porslinsfasader</a></li>
+          <li><a href="estetisk-tandvard.html#invisalign">Invisalign</a></li>
+          <li><a href="estetisk-tandvard.html#implantat">Implantat</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Kliniken</span>
+        <ul class="footer-links">
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="priser.html">Priser &amp; ATB</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#">Integritetspolicy</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Besök oss</span>
+        <ul class="footer-links">
+          <li><a href="#">Avenyn 12</a></li>
+          <li><a href="#">411 36 Göteborg</a></li>
+          <li><a href="tel:+4631123456">031 — 123 45 67</a></li>
+          <li><a href="mailto:hej@crystaltand.se">hej@crystaltand.se</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Crystal Tandvård AB &nbsp;·&nbsp; Org.nr 556XXX-XXXX</span>
+      <span class="footer-copy">Göteborg, Sverige</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

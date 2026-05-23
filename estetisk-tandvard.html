@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estetisk tandvård — Crystal Tandvård</title>
+  <meta name="description" content="Utforska Crystals kompletta utbud av estetiska tandvårdsbehandlingar — från tandblekning och porslinsfasader till Invisalign och implantat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .treatment-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding-block: 88px;
+    }
+    .treatment-block + .treatment-block {
+      border-top: 0.5px solid rgba(184,152,90,0.3);
+    }
+    .treatment-block.reverse { direction: rtl; }
+    .treatment-block.reverse > * { direction: ltr; }
+    .treatment-visual {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 0.5px solid rgba(184,152,90,0.4);
+    }
+    .treatment-visual img {
+      width: 100%; height: 400px; object-fit: cover; display: block;
+    }
+    .treatment-content { display: flex; flex-direction: column; gap: 20px; }
+    .treatment-meta {
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 0.5px solid rgba(184,152,90,0.3);
+      margin-bottom: 4px;
+    }
+    .treatment-price {
+      font-family: var(--font-serif);
+      font-size: 24px; font-weight: 400; color: var(--primary);
+    }
+    .treatment-price span {
+      font-family: var(--font-mono);
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--on-surface-variant);
+      margin-left: 8px;
+    }
+    @media(max-width:768px){
+      .treatment-block { grid-template-columns:1fr; gap:40px; padding-block:64px; }
+      .treatment-block.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Crystal</a>
+      <ul class="nav-links">
+        <li><a href="estetisk-tandvard.html" class="active">Tjänster</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="priser.html">Priser</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="priser.html" class="btn-secondary">Se priser</a>
+        <a href="index.html#boka" class="btn-primary">Boka tid</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mobile-nav-link">Hem</a>
+    <a href="estetisk-tandvard.html" class="mobile-nav-link">Tjänster</a>
+    <a href="om-oss.html" class="mobile-nav-link">Om oss</a>
+    <a href="priser.html" class="mobile-nav-link">Priser</a>
+    <a href="index.html#kontakt" class="mobile-nav-link">Kontakt</a>
+    <div class="mobile-nav-cta"><a href="index.html#boka" class="btn-primary">Boka tid</a></div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner" style="max-width:var(--container-max);padding-inline:var(--margin-desktop)">
+      <span class="eyebrow">Estetisk tandvård</span>
+      <h1 class="display-lg" style="font-size:52px;line-height:60px">Behandlingar som gör skillnad</h1>
+      <p class="body-lg" style="max-width:560px">Vi erbjuder ett komplett utbud av estetiska och preventiva behandlingar — utformade för att passa ditt liv och dina mål.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px">
+        <a href="index.html#boka" class="btn-primary">Boka kostnadsfri konsultation</a>
+        <a href="priser.html" class="btn-secondary">Se priser</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREATMENTS -->
+  <div class="container">
+
+    <!-- Tandblekning -->
+    <div class="treatment-block" id="blekning">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format" alt="Tandblekning">
+      </div>
+      <div class="treatment-content">
+        <span class="chip">Populärast</span>
+        <h2 class="headline-lg">Tandblekning</h2>
+        <p class="body-lg">Vår kliniska blekning ger upp till 8 nyanser ljusare tänder på en enda behandling. Vi använder den senaste tekniken kombinerat med professionella blekmedel för ett jämnt och naturligt resultat.</p>
+        <ul class="crystal-list">
+          <li>Upp till 8 nyanser ljusare på 60–90 min</li>
+          <li>Minimalt obehag med vår hänsyn-metodik</li>
+          <li>Hemblekningssats ingår för underhåll</li>
+          <li>Resultat som håller 1–3 år med rätt vård</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 3 500 kr <span>per behandling</span></div>
+          <span class="chip">ATB godkänt</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka nu</a>
+          <a href="priser.html#blekning" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Porslinsfasader -->
+    <div class="treatment-block reverse" id="fasader">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80&auto=format" alt="Porslinsfasader">
+      </div>
+      <div class="treatment-content">
+        <h2 class="headline-lg">Porslinsfasader</h2>
+        <p class="body-lg">Ultratunna keramikskivor som bondar direkt mot tandytan. En av de mest transformativa behandlingarna inom estetisk tandvård — med minimal eller ingen preparering av tanden.</p>
+        <ul class="crystal-list">
+          <li>Korrigerar missfärgning, form och storlek</li>
+          <li>Hållbarhet 10–20 år med rätt vård</li>
+          <li>Tillverkas i Skandinaviens ledande keramiklaboratorium</li>
+          <li>Digital smile design — se resultatet innan behandling</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 8 500 kr <span>per fasad</span></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka konsultation</a>
+          <a href="priser.html#fasader" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Invisalign -->
+    <div class="treatment-block" id="invisalign">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?w=800&q=80&auto=format" alt="Invisalign">
+      </div>
+      <div class="treatment-content">
+        <h2 class="headline-lg">Invisalign</h2>
+        <p class="body-lg">Världens ledande system för osynlig tandreglering. Skräddarsydda skenor i medicinskt plastmaterial som successivt för dina tänder till rätt position — utan metallbågar eller fasta apparater.</p>
+        <ul class="crystal-list">
+          <li>Nästan osynlig under behandlingstiden</li>
+          <li>Avtagbar — ät och borsta utan hinder</li>
+          <li>Behandlingstid 6–18 månader beroende på fall</li>
+          <li>3D-planering med exakt förhandsgranskning</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 24 900 kr <span>komplett behandling</span></div>
+          <span class="chip">Delbetalning</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka konsultation</a>
+          <a href="priser.html#invisalign" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implantat -->
+    <div class="treatment-block reverse" id="implantat">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&auto=format" alt="Tandimplantat">
+      </div>
+      <div class="treatment-content">
+        <h2 class="headline-lg">Tandimplantat</h2>
+        <p class="body-lg">Implantat i medicinsk titanium är den mest naturliga och hållbara lösningen för saknade tänder. En titanskruv fusionerar med käkbenet och bär upp en skräddarsydd krona.</p>
+        <ul class="crystal-list">
+          <li>Livslång lösning med rätt vård</li>
+          <li>Ser ut och känns som en naturlig tand</li>
+          <li>Bevarar käkbenets struktur</li>
+          <li>Tillverkas i Straumann-system av premiumkvalitet</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 18 000 kr <span>per implantat inkl. krona</span></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka konsultation</a>
+          <a href="priser.html#implantat" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preventiv -->
+    <div class="treatment-block" id="preventiv">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80&auto=format" alt="Förebyggande tandvård">
+      </div>
+      <div class="treatment-content">
+        <h2 class="headline-lg">Förebyggande vård</h2>
+        <p class="body-lg">Grunden för ett friskt leende. Vår preventiva vård kombinerar professionell rengöring med individuell rådgivning för att hålla dina tänder i toppskick år efter år.</p>
+        <ul class="crystal-list">
+          <li>Digital röntgen med minimal strålning</li>
+          <li>Professionell rengöring och polering</li>
+          <li>Fluorid- och fissurbehandling</li>
+          <li>Skräddarsydd hemvårdsplan</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 1 200 kr <span>undersökning + rengöring</span></div>
+          <span class="chip">ATB godkänt</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka undersökning</a>
+          <a href="priser.html" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skydd -->
+    <div class="treatment-block reverse" id="skydd">
+      <div class="treatment-visual">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format" alt="Bettskena och tandskydd">
+      </div>
+      <div class="treatment-content">
+        <h2 class="headline-lg">Bettskena &amp; Skydd</h2>
+        <p class="body-lg">Skräddarsydda bettskenor skyddar dina tänder mot slitage från tandpressning och bruxism. Vi tillverkar även sportskydd i premiumkvalitet för aktiva patienter.</p>
+        <ul class="crystal-list">
+          <li>Digitalt avtryck — ingen traditionell smet</li>
+          <li>Tillverkas i hårdplast av laboratoriekvalitet</li>
+          <li>Minskar käksmärtor och huvudvärk</li>
+          <li>Sportskydd i samarbete med tandtekniker</li>
+        </ul>
+        <div class="treatment-meta">
+          <div class="treatment-price">Från 2 800 kr <span>bettskena</span></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#boka" class="btn-primary">Boka konsultation</a>
+          <a href="priser.html" class="btn-link">Se fullständigt pris →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <span class="eyebrow">Nästa steg</span>
+        <h2 class="headline-lg">Osäker på vilken behandling du behöver?</h2>
+        <p class="body-lg">Boka en kostnadsfri konsultation — vi hjälper dig hitta rätt behandling för just dina mål.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="index.html#boka" class="btn-primary">Boka gratis konsultation</a>
+        <a href="priser.html" class="btn-ghost">Se priser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="footer-logo">Crystal</a>
+        <p class="footer-tagline">Göteborgs premiummottagning för estetisk och preventiv tandvård.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Tjänster</span>
+        <ul class="footer-links">
+          <li><a href="#blekning">Tandblekning</a></li>
+          <li><a href="#fasader">Porslinsfasader</a></li>
+          <li><a href="#invisalign">Invisalign</a></li>
+          <li><a href="#implantat">Implantat</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Kliniken</span>
+        <ul class="footer-links">
+          <li><a href="om-oss.html">Om oss</a></li>
+          <li><a href="priser.html">Priser &amp; ATB</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="#">Integritetspolicy</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Besök oss</span>
+        <ul class="footer-links">
+          <li><a href="#">Avenyn 12</a></li>
+          <li><a href="#">411 36 Göteborg</a></li>
+          <li><a href="tel:+4631123456">031 — 123 45 67</a></li>
+          <li><a href="mailto:hej@crystaltand.se">hej@crystaltand.se</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Crystal Tandvård AB</span>
+      <span class="footer-copy">Göteborg, Sverige</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
